@@ -21,11 +21,8 @@
 </head>
 
 <body>
-
     <section class="main">
-
         <nav>
-
             <img class="logo" src="src/images/logo.png" alt="Logo" />
             <navigationBar id="navList">
                 <li>
@@ -33,7 +30,6 @@
                         <a href="#about-me">About Me</a>
                     </navbarItem>
                 </li>
-
                 <li>
                     <navbarItem>
                         <a href="#projects">Projects</a>
@@ -45,12 +41,6 @@
                     </navbarItem>
                 </li>
             </navigationBar>
-
-
-
-            <button class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
-            </button>
         </nav>
         <div class="area">
             <ul class="circles">
@@ -61,21 +51,18 @@
                 <li></li>
                 <li></li>
                 <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
             </ul>
+            
         </div>
-
         <div class="main-area">
             <div class="main-text">
-
                 <div class="waving-letters">
                     <span style="--i:1">F</span>
                     <span style="--i:2">A</span>
                     <span style="--i:3">D</span>
                     <span style="--i:4">I</span>
-                    &nbsp;
+                    <br>
+                    &emsp;
                     <span style="--i:5">B</span>
                     <span style="--i:6">A</span>
                     <span style="--i:7">D</span>
@@ -84,10 +71,7 @@
                     <span style="--i:10">N</span>
                     <span style="--i:11">I</span>
                 </div>
-
-                <br>
                 <subTitle>Software Engineering Student</subTitle>
-
                 <div class="aboutButton"><a href="#about-me">About Me</a> </div>
             </div>
             <div class="container">
@@ -102,13 +86,10 @@
                                 aria-hidden="true"></i></a> </li>
                 </ul>
             </div>
-
-
         </div>
-
     </section>
-
     <section class="about-section" id="about-me">
+        
         <div class="information">
             <div class="item scrollFade">
                 <h2>Summary</h2>
@@ -118,6 +99,9 @@
                 and a
                 self-motivated person.
                 <br>
+                <div class="headshot-container">
+                    <img class="headshot" src="src/images/fadi.jpg" alt="fadi's image">
+                </div>
                 &emsp;Always on the look for new challenges and acquiring useful skills to help me boost my knowledge in
                 different aspects of the
                 &emsp;field, determination and hardwork are key aspects in defining who i am.
@@ -185,9 +169,6 @@
                 day.
             </p1>
         </div>
-        <div class="headshot-container">
-            <img class="headshot" src="src/images/fadi.jpg" alt="fadi's image">
-        </div>
     </section>
     <section2 class="projects-section" id="projects">
 
@@ -201,7 +182,6 @@
             <span style="--i:7">t</span>
             <span style="--i:8">s</span>
         </div>
-
         <div class="project-container">
             <div class="item scrollFade">
                 <div class="project-card">
@@ -272,12 +252,11 @@
                 </div>
             </div>
         </div>
-
     </section2>
 
     <section>
         <footer id="contact-me" class="contactForm">
-            <section3 class="contact-section">
+            <section class="contact-section">
                 <form onsubmit="sendEmail(); reset(); return false;">
                     <h3>GET IN TOUCH</h3>
 
@@ -288,7 +267,7 @@
                     <div class="form__group field">
                         <input type="text" class="form__field" placeholder="Phone Number" name="phone" id='phone'
                             required />
-                        <label for="phone" class="form__label">Phone Number</label>
+                        <label for="phone" class="form__label">Phone</label>
                     </div>
                     <div class="form__group field">
                         <input type="email" class="form__field" placeholder="Email Address" name="email" id='email'
@@ -302,24 +281,24 @@
                         <label for="message" class="form__label">Subject</label>
                     </div>
 
-
                     <button type="submit" id="button">Send</button>
+
                 </form>
 
                 <div class="contact-container">
                     <img class="contact" src="src/images/contact.png" alt="fadi's image">
                 </div>
 
-            </section3>
+            </section>
 
         </footer>
 
     </section>
 
-
     <script src="assets/js/scrollfade.js"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="src/app.js"></script>
+
 </body>
 
 </html>

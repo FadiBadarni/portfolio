@@ -6,6 +6,8 @@ form button {
   width: 150px;
   margin: 20px auto 0;
   border-radius: 30px;
+  background-color: #7f53ac;
+background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
 }
 
 $primary: #11998e;
@@ -22,7 +24,6 @@ $gray: #9b9b9b;
 
 .form__field {
   font-family: inherit;
-  //   width: 100%;
   border: 0;
   border-bottom: 2px solid $gray;
   outline: 0;
@@ -31,7 +32,7 @@ $gray: #9b9b9b;
   padding: 7px 0;
   background: transparent;
   transition: border-color 0.2s;
-
+  
   &::placeholder {
     color: transparent;
   }
@@ -64,11 +65,11 @@ $gray: #9b9b9b;
   }
 
   padding-bottom: 6px;
-  font-weight: 700;
   border-width: 3px;
   border-image: linear-gradient(to right, $primary, $secondary);
   border-image-slice: 1;
 }
+
 
 .form__field {
 
@@ -77,6 +78,7 @@ $gray: #9b9b9b;
     box-shadow: none;
   }
 }
+
 
 .scrollFade {
   opacity: 1;
