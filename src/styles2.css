@@ -4,10 +4,10 @@ form button {
   cursor: pointer;
   outline: none;
   width: 150px;
-  margin: 20px auto 0;
+  margin: 30px auto 0;
   border-radius: 30px;
-  background-color: #7f53ac;
-  background-image: linear-gradient(315deg, #7f53ac 0%, #647dee 74%);
+  background-color: #be8de6;
+  background-image: linear-gradient(315deg, #b08cc7 0%, #a88beb 74%);
 }
 
 .form__group {
@@ -96,7 +96,7 @@ form button {
   pointer-events: all;
 }
 .scrollFade--animate {
-  transition: opacity 4s ease-in-out;
+  transition: opacity 3s ease-in-out;
 }
 
 a {

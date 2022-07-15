@@ -32,7 +32,7 @@ html {
 
 section {
 
-    background-color: #aeaab1;
+    background-color: #5e5466;
 
 }
 
@@ -43,8 +43,7 @@ section2 {
 }
 
 section3 {
-
-    background-color: #000000;
+    
 }
 
 .main {
@@ -54,7 +53,7 @@ section3 {
 }
 
 footer {
-    background-color: #1c1d25;
+    background: rgba(147, 123, 179, 0.76);
     color: white;
     text-align: center;
     padding: 90px;
@@ -167,14 +166,17 @@ p1 {
 }
 
 .about-section {
+    background: rgba(46, 25, 73, 0.76);
     display: flex;
     justify-content: space-around;
     padding: 40px;
+    
 }
 
 
 .contact-section {
     display: flex;
+    
     justify-content: space-around;
     padding: 15px;
     border-radius: 6px;
@@ -252,6 +254,13 @@ p1 {
 .project-image4 {
     margin-top: 0px;
     width: 280px;
+    border-radius: 100px;
+    float: left;
+}
+
+.project-image5 {
+    margin-top: -45px;
+    width: 300px;
     border-radius: 100px;
     float: left;
 }
@@ -366,11 +375,11 @@ h3 {
 
 form {
     box-shadow: 12px 12px 2px 1px rgba(140, 0, 255, 0.267);
-    background-color: rgb(76, 43, 129);
+    background-color: rgb(102, 62, 167);
     display: flex;
     flex-direction: column;
     padding: 2vw 4vw;
-    width: 30%;
+    width: 23%;
     max-width: 600px;
     max-height: 500px;
     border-radius: 10px;
@@ -433,18 +442,7 @@ body {
 }
 
 
-.context {
-    width: 100%;
-    position: absolute;
-    top: 50vh;
 
-}
-
-.context h1 {
-    text-align: center;
-    color: #fff;
-    font-size: 50px;
-}
 
 .circles {
 
@@ -761,6 +759,14 @@ body {
         flex-wrap: wrap !important;
     }
 }
+
+@media only screen and (max-width: 1650px) {
+    .project-container {
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+}
+
 @media only screen and (max-width: 1143px) {
     form {
         padding: 3vw 4vw !important;
@@ -769,6 +775,7 @@ body {
         width: 100% !important;
     }
 }
+
 /* PHONES DIMENSIONS */
 @media only screen and (max-width: 640px) {
     .main-text {
@@ -842,6 +849,7 @@ body {
     }
 
     .contact-section {
+        
         display: inline-block;
         justify-content: center;
         padding: 0;
@@ -910,3 +918,4 @@ body {
         flex-wrap: wrap !important;
     }
 }
+
