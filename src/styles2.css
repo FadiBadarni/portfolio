@@ -6,8 +6,8 @@ form button {
   width: 150px;
   margin: 30px auto 0;
   border-radius: 30px;
-  background-color: #be8de6;
-  background-image: linear-gradient(315deg, #b08cc7 0%, #a88beb 74%);
+  background-color: #8db7e6;
+  background-image: linear-gradient(315deg, #8cb9c7 0%, #8bc5eb 74%);
 }
 
 .form__group {

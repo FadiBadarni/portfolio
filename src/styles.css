@@ -1,5 +1,5 @@
 body {
-    font-family: 'Poppins', sans-serif;
+    
     margin: 0;
     margin: 0;
     padding: 0;
@@ -17,7 +17,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: rgb(168, 80, 190);
+    background-color: rgb(122, 144, 219);
     border-radius: 13px;
 
 }
@@ -37,23 +37,23 @@ section {
 }
 
 section2 {
-
-    background-color: #9fa4c4;
-    background-image: linear-gradient(315deg, #ac9fc4 0%, #645077 74%);
+    background-color: #52a7c1;
+    background-image: linear-gradient(315deg, #52a7c1 0%, #729e8a 74%);
 }
 
-section3 {
-    
-}
+section3 {}
 
 .main {
-    background-color: #1c1d25;
+    background-color: #52a7c1;
+    background-image: linear-gradient(315deg, #52a7c1 0%, #b3f6d8 74%);
     height: 100vh;
+
     font-size: 40px;
 }
 
 footer {
-    background: rgba(147, 123, 179, 0.76);
+    background-color: #52a7c1;
+    background-image: linear-gradient(315deg, #52a7c1 0%, #729e8a 74%);
     color: white;
     text-align: center;
     padding: 90px;
@@ -71,12 +71,13 @@ ul {
 }
 
 subTitle {
-    font-weight: 400;
-    color: rebeccapurple;
+    font-weight: 600;
+    color: rgb(45, 102, 112);
     font-size: 30px;
     position: relative;
     top: 36px;
     padding: 10px;
+    left: 110%;
 }
 
 nav {
@@ -86,33 +87,36 @@ nav {
 
 navigationBar {
     display: flex;
+
     list-style-type: none;
     width: 500px;
     justify-content: space-around;
     font-size: 30px;
+
 }
 
 li navbarItem {
-    position: relative;
-    left: -50px;
-    top: 15px;
+
     font-weight: 600;
 }
 
 li navbarItem a {
+    color: rgb(33, 124, 104);
     text-decoration: none;
     position: relative;
     top: 30px;
     cursor: pointer;
+    justify-content: space-between;
     transition: 0.5s;
+    left: 35vw;
 }
 
 li navbarItem a:hover {
-    color: #fff;
-    text-shadow: 0 0 5px #8803f4,
-        0 0 25px #8803f4,
-        0 0 50px #8803f4,
-        0 0 100px #8803f4;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 5px #03b0f4,
+        0 0 25px #03b0f4,
+        0 0 50px #03b0f4,
+        0 0 100px #03b0f4;
 }
 
 li a {
@@ -137,8 +141,8 @@ p {
 
 p1 {
     margin: 0;
-    font-size: 22px;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 23px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 
@@ -166,17 +170,18 @@ p1 {
 }
 
 .about-section {
-    background: rgba(46, 25, 73, 0.76);
+    background-color: #3f8397;
+    background-image: linear-gradient(315deg, #3b7b8f 43%, #7ef8c1 84%);
     display: flex;
     justify-content: space-around;
     padding: 40px;
-    
+
 }
 
 
 .contact-section {
     display: flex;
-    
+
     justify-content: space-around;
     padding: 15px;
     border-radius: 6px;
@@ -191,17 +196,31 @@ p1 {
 }
 
 .headshot {
-    width: 100%;
-    border-radius: 90%;
+    width: 90%;
+    border-radius: 40%;
 }
 
 .headshot-container {
     display: inline-block !important;
+    max-width: 30%;
+    max-height: 30%;
+    float: right;
+    margin-top: 5%;
+
+}
+
+.headshot2 {
+    width: 90%;
+    border-radius: 40%;
+}
+
+.headshot-container2 {
+    display: inline-block !important;
     max-width: 25%;
     max-height: 25%;
-    float: right;
-    margin-top: 10%;
-
+    position: absolute;
+    left: 72%;
+    top: 5%;
 }
 
 .contact {
@@ -215,13 +234,14 @@ p1 {
 }
 
 .project-card {
-    width: 300px;
+    width: 400px;
     height: 500px;
     border: 1px solid black;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.836);
     margin: 10px;
-    background-color: #8e71be !important;
-    background-image: linear-gradient(315deg, #c6aee2 0%, #70548a 74%);
+    border-radius: 3%;
+    background-color: #89d8d3;
+    background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
 }
 
 .project-container {
@@ -230,45 +250,18 @@ p1 {
 }
 
 .project-image {
-    width: 360px;
-    border-radius: 125px;
+    width: 95%;
+    border-radius: 10%;
     margin: auto -50px;
+    margin-top: 3%;
 
 }
 
 .project-image2 {
-    margin-top: 50px;
-    width: 350px;
-    border-radius: 125px;
-    float: left;
-    margin: auto -25px;
-}
-
-.project-image3 {
-    margin-top: -28px;
-    width: 280px;
-    border-radius: 100px;
-    float: left;
-}
-
-.project-image4 {
-    margin-top: 0px;
-    width: 280px;
-    border-radius: 100px;
-    float: left;
-}
-.project-image5 {
-    margin-top: -45px;
-    width: 300px;
-    border-radius: 100px;
-    float: left;
-}
-
-.project-image5 {
-    margin-top: -45px;
-    width: 300px;
-    border-radius: 100px;
-    float: left;
+    width: 95%;
+    border-radius: 10%;
+    margin: auto -50px;
+    margin-top: 3%;
 }
 
 hr {
@@ -300,7 +293,7 @@ a {
     border: none;
     outline: none;
     color: #fff;
-    background: #111;
+    background: rgb(77, 75, 75);
     cursor: pointer;
     position: relative;
     z-index: 0;
@@ -310,13 +303,13 @@ a {
     padding-top: 5px;
     margin-top: 60px;
     font-size: 30px;
-    left: 2px;
+    left: 125%;
 }
 
 .aboutButton:before {
     content: '';
-    background-color: #a4508b;
-    background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+    background-color: #734ae8;
+    background-image: linear-gradient(315deg, #734ae8 0%, #89d4cf 74%);
     position: absolute;
     top: -2px;
     left: -2px;
@@ -349,7 +342,7 @@ a {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #111;
+    background: rgb(77, 77, 77);
     left: 0;
     top: 0;
     border-radius: 10px;
@@ -380,8 +373,8 @@ h3 {
 }
 
 form {
-    box-shadow: 12px 12px 2px 1px rgba(140, 0, 255, 0.267);
-    background-color: rgb(102, 62, 167);
+    box-shadow: 12px 12px 2px 1px rgba(0, 83, 179, 0.267);
+    background-color: rgb(27, 94, 94);
     display: flex;
     flex-direction: column;
     padding: 2vw 4vw;
@@ -408,15 +401,17 @@ form textarea {
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
 
 .waving-letters {
+    padding-top: 30%;
     position: relative;
     -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, .2));
     font-size: 60px;
+    font-weight: 600;
 }
 
 .waving-letters span {
     position: relative;
     display: inline-block;
-    color: rgb(201, 179, 219);
+    color: #52807a;
     text-transform: uppercase;
     animation: waving-letters 2s infinite;
     animation-delay: calc(.2s * var(--i));
@@ -466,7 +461,7 @@ body {
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(4, 63, 78, 0.2);
     animation: animate 25s linear infinite;
     bottom: 0px;
 
@@ -549,7 +544,8 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    right: 100px;
+    right: 50px;
+    top: 18%;
     max-width: 400px;
     max-height: 400px;
 }
@@ -557,7 +553,7 @@ body {
 .social_icons li a {
     width: 80px;
     height: 80px;
-    background: rgba(162, 127, 207, 0.76);
+    background: rgba(77, 161, 147, 0.815);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -575,7 +571,7 @@ body {
     left: -20px;
     height: 100%;
     width: 20px;
-    background: rgba(162, 127, 207, 0.76);
+    background: rgba(77, 161, 147, 0.815);
     transition: 0.5s;
     transform: rotate(0deg) skewY(-45deg);
 }
@@ -587,7 +583,7 @@ body {
     left: -10px;
     height: 20px;
     width: 100%;
-    background: rgba(162, 127, 207, 0.76);
+    background: rgba(77, 161, 147, 0.815);
     transition: 0.5s;
     transform: rotate(0deg) skewX(-45deg);
 
@@ -692,6 +688,22 @@ body {
         width: 200px;
         border-radius: 150px;
     }
+    .headshot-container {
+        display: inline-block !important;
+        max-width: 50%;
+        max-height: 50%;
+        float: right;
+        
+
+    }
+    .headshot2 {
+        
+    }
+    .headshot-container2 {
+        margin-top: 10%;
+        
+
+    }
 
     nav {
         display: flex;
@@ -708,6 +720,13 @@ body {
 
     subTitle {
         font-size: 25px !important;
+        padding: 0 !important;
+        display: inline-block !important;
+        margin-top: 30%;
+        position: relative;
+        
+        left: 40%;
+        
     }
 
     .project-container {
@@ -729,7 +748,7 @@ body {
 
     li navbarItem {
         position: relative;
-        left: 0;
+        right: 200%;
         top: 5px;
         font-weight: 600;
     }
@@ -742,7 +761,7 @@ body {
     }
 
     .container {
-        width: 150px !important;
+        width: 150% !important;
         height: 150px !important;
         top: 220px !important;
     }
@@ -759,26 +778,26 @@ body {
     }
 }
 
-@media only screen and (max-width: 1280px) {
-    .project-container {
-        display: flex !important;
-        flex-wrap: wrap !important;
-    }
-}
-
-@media only screen and (max-width: 1650px) {
-    .project-container {
-        display: flex !important;
-        flex-wrap: wrap !important;
-    }
-}
-
 @media only screen and (max-width: 1143px) {
     form {
         padding: 3vw 4vw !important;
         position: relative;
         right: 20px;
         width: 100% !important;
+    }
+
+}
+@media only screen and (max-width: 1300px) {
+    .container {
+        width: 150% !important;
+        height: 150px !important;
+        top: 220px !important;
+    }
+
+    .social_icons li a {
+        width: 90px !important;
+        height: 90px !important;
+
     }
 }
 
@@ -792,13 +811,14 @@ body {
     }
 
     subTitle {
-        font-weight: 300 !important;
+        
         font-size: 20px !important;
         padding: 0 !important;
         display: inline-block !important;
         margin-top: 5px;
         position: relative;
         top: -60px;
+        left: 40%;
     }
 
     .waving-letters {
@@ -819,11 +839,26 @@ body {
     }
 
     .headshot {
-        width: 140px;
-        border-radius: 140px;
+        width: 100%;
+        border-radius: 100%;
     }
 
     .headshot-container {
+        display: inline-block !important;
+        max-width: 50%;
+        max-height: 50%;
+        float: right;
+        
+
+    }
+    .headshot2 {
+        float: right;
+        margin-top: 30%;
+        width: 150%;
+        border-radius: 75%;
+    }
+
+    .headshot-container2 {
         display: inline-block !important;
         max-width: 140px;
         max-height: 140px;
@@ -844,7 +879,7 @@ body {
     p1 {
         margin: 0;
         font-size: 17px;
-        font-family: 'Times New Roman', Times, serif;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
 
     .aboutButton {
@@ -855,7 +890,7 @@ body {
     }
 
     .contact-section {
-        
+
         display: inline-block;
         justify-content: center;
         padding: 0;
@@ -904,6 +939,7 @@ body {
         text-decoration: none;
         position: relative;
         top: 30px;
+        left: 20%;
         cursor: pointer;
         transition: 0.5s;
     }
@@ -924,4 +960,3 @@ body {
         flex-wrap: wrap !important;
     }
 }
-
