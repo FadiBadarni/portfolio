@@ -11,9 +11,9 @@ const theme = createTheme({
     fontFamily: "'Source Sans 3', sans-serif",
   },
   palette: {
-    // background: {
-    //   default: `${Colors.raisinBlack}`,
-    // },
+    background: {
+      default: `${Colors.raisinBlack}`,
+    },
     text: {
       primary: `${Colors.cultered}`,
     },
