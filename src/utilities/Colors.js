@@ -5,7 +5,8 @@ const Colors = {
   grey: "#808080",
   softLavender: "#EDE7F6",
   white: "#FFFFFF",
-  lightGrey: "#D3D3D3",
+  cultered: "#f8f7f8",
+  raisinBlack: "#201b27",
 };
 
 export default Colors;
