@@ -1,11 +1,11 @@
 import React from "react";
 import { Grid, useMediaQuery, Button, Box, lighten } from "@mui/material";
 import { motion } from "framer-motion";
-import { MaskedTypography } from "./MaskedTypography";
+import { MaskedTypography } from "components/core/MaskedTypography";
 import { useTheme } from "@emotion/react";
-import { ImageBox } from "./ImageBox";
-import { SocialMediaContainer } from "./SocialMediaContainer";
-import Colors from "../utilities/Colors";
+import { ImageBox } from "components/core/ImageBox";
+import { SocialMediaContainer } from "components/core/SocialMediaContainer";
+import Colors from "utilities/Colors";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 const textMotionVariant = {

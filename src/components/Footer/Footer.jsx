@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import { EmorphedBox } from "./EmorphedBox";
+import { EmorphedBox } from "components/core/EmorphedBox";
 
 const Footer = () => {
   return (

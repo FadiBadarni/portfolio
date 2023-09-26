@@ -1,16 +1,16 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import { EmorphedBox } from "./EmorphedBox";
+import { EmorphedBox } from "components/core/EmorphedBox";
 
-const Projects = () => {
+const Work = () => {
   return (
     <EmorphedBox>
       <Typography variant="h6" gutterBottom>
-        Projects
+        Work
       </Typography>
       <Typography variant="body1">A collection of my latest work.</Typography>
     </EmorphedBox>
   );
 };
 
-export default Projects;
+export default Work;

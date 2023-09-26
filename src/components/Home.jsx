@@ -1,10 +1,10 @@
 import React from "react";
 import { Container, Grid } from "@mui/material";
-import Projects from "./Projects";
-import Skills from "./Skills";
-import Contact from "./Contact";
-import Footer from "./Footer";
-import Hero from "./Hero";
+import Projects from "components/Work/Work";
+import Skills from "components/Skills/Skills";
+import Contact from "components/Contact/Contact";
+import Footer from "components/Footer/Footer";
+import Hero from "components/Hero/Hero";
 
 const Home = () => {
   return (

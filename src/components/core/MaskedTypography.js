@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import { Typography } from "@mui/material";
-import Colors from "../utilities/Colors";
+import Colors from "utilities/Colors";
 
 export const MaskedTypography = styled(Typography)`
   -webkit-background-clip: text;

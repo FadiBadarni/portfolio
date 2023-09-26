@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 import { motion, useAnimation } from "framer-motion";
 import { EmorphedBox } from "./EmorphedBox";
 import { GitHub, LinkedIn } from "@mui/icons-material";
-import Colors from "../utilities/Colors";
+import Colors from "utilities/Colors";
 
 export const SocialMediaContainer = () => {
   const githubControls = useAnimation();
