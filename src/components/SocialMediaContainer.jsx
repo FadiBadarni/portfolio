@@ -3,23 +3,26 @@ import { Box, Typography } from "@mui/material";
 import { motion, useAnimation } from "framer-motion";
 import { EmorphedBox } from "./EmorphedBox";
 import { GitHub, LinkedIn } from "@mui/icons-material";
+import Colors from "../utilities/Colors";
 
 export const SocialMediaContainer = () => {
   const githubControls = useAnimation();
   const linkedInControls = useAnimation();
+  const [activeIcon, setActiveIcon] = useState(null);
 
-  const handleMouseEnter = (controls) => {
+  const handleMouseEnter = (controls, name) => {
+    if (activeIcon) {
+      if (activeIcon === "GitHub") {
+        githubControls.start({ opacity: 0, width: 0 });
+      } else if (activeIcon === "LinkedIn") {
+        linkedInControls.start({ opacity: 0, width: 0 });
+      }
+    }
     controls.start({
       opacity: 1,
       width: "auto",
     });
-  };
-
-  const handleMouseLeave = (controls) => {
-    controls.start({
-      opacity: 0,
-      width: 0,
-    });
+    setActiveIcon(name);
   };
 
   return (
@@ -27,13 +30,42 @@ export const SocialMediaContainer = () => {
       sx={{
         display: "flex",
         alignItems: "center",
-        justifyContent: "flex-end",
+        justifyContent: "center",
         height: "4rem",
         width: "100%",
         mt: 5,
         borderRadius: "20px",
         overflow: "hidden",
         p: 3,
+        position: "relative",
+        boxShadow:
+          "0 0 20px 3px rgba(255, 255, 255, 0.2), 0 0 10px 2px rgba(255, 255, 255, 0.1)",
+        "&::after": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: "inherit",
+          background: `
+          conic-gradient(
+            from 0deg at 50% 50%,
+            ${Colors.darkPurple} 0deg,
+            ${Colors.darkPurple} 90deg,
+            ${Colors.darkPurple} 135deg,
+            ${Colors.grey} 180deg,
+            ${Colors.softLavender} 225deg,
+            ${Colors.white} 270deg,
+            ${Colors.softLavender} 315deg,
+            ${Colors.deepIndigo} 360deg
+          )
+
+
+        `,
+          pointerEvents: "none",
+          zIndex: -1,
+        },
       }}
     >
       <Box
@@ -44,9 +76,12 @@ export const SocialMediaContainer = () => {
           border: "2px solid #000",
           p: 0.2,
           m: 1,
+          cursor: "pointer",
+          "&:hover": {
+            backgroundColor: "rgba(255, 255, 255, 0.1)",
+          },
         }}
-        onMouseEnter={() => handleMouseEnter(githubControls)}
-        onMouseLeave={() => handleMouseLeave(githubControls)}
+        onMouseEnter={() => handleMouseEnter(githubControls, "GitHub")}
       >
         <GitHub
           sx={{
@@ -60,7 +95,7 @@ export const SocialMediaContainer = () => {
               padding: "4px 8px",
             }}
           >
-            <Typography variant="body2">Github</Typography>
+            <Typography variant="h6">Github</Typography>
           </Box>
         </motion.div>
       </Box>
@@ -73,9 +108,12 @@ export const SocialMediaContainer = () => {
           border: "2px solid #000",
           p: 0.2,
           m: 1,
+          cursor: "pointer",
+          "&:hover": {
+            backgroundColor: "rgba(255, 255, 255, 0.1)",
+          },
         }}
-        onMouseEnter={() => handleMouseEnter(linkedInControls)}
-        onMouseLeave={() => handleMouseLeave(linkedInControls)}
+        onMouseEnter={() => handleMouseEnter(linkedInControls, "LinkedIn")}
       >
         <LinkedIn
           sx={{
@@ -92,7 +130,7 @@ export const SocialMediaContainer = () => {
               padding: "4px 8px",
             }}
           >
-            <Typography variant="body2">LinkedIn</Typography>
+            <Typography variant="h6">LinkedIn</Typography>
           </Box>
         </motion.div>
       </Box>
