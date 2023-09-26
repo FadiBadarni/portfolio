@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import CssBaseline from "@mui/material/CssBaseline";
 import { createTheme, ThemeProvider } from "@mui/material";
 import Colors from "./utilities/Colors";
+import "./App.css";
 
 const theme = createTheme({
   typography: {
