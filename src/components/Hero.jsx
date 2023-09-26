@@ -1,14 +1,22 @@
 import React from "react";
-import { Grid, useMediaQuery } from "@mui/material";
+import { Grid, useMediaQuery, Button, Box, lighten } from "@mui/material";
 import { motion } from "framer-motion";
 import { MaskedTypography } from "./MaskedTypography";
 import { useTheme } from "@emotion/react";
 import { ImageBox } from "./ImageBox";
 import { SocialMediaContainer } from "./SocialMediaContainer";
+import Colors from "../utilities/Colors";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 
 const textMotionVariant = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
+};
+
+const buttonVariants = {
+  initial: { scale: 1 },
+  hover: { scale: 1.1, rotate: [0, 10, -10, 0] },
+  tap: { scale: 0.95 },
 };
 
 const Hero = () => {
@@ -28,7 +36,7 @@ const Hero = () => {
           sx={{ height: "100%" }}
           justifyContent="center"
         >
-          <Grid item sx={{ height: "50%" }}>
+          <Grid item sx={{ height: "50%", mt: 3, mb: 3 }}>
             <motion.div
               initial="hidden"
               animate="visible"
@@ -56,10 +64,58 @@ const Hero = () => {
           <Grid
             item
             sx={{
-              height: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              mt: 3,
+              mb: 3,
+            }}
+          >
+            <motion.div
+              initial="initial"
+              whileHover="hover"
+              whileTap="tap"
+              variants={buttonVariants}
+            >
+              <Button
+                variant="contained"
+                endIcon={
+                  <ArrowDropDownIcon
+                    sx={{
+                      fontSize: "2.5rem",
+                      color: Colors.cultered,
+                    }}
+                  />
+                }
+                sx={{
+                  backgroundColor: Colors.raisinBlack,
+                  color: Colors.white,
+                  "&:hover": {
+                    backgroundColor: lighten(Colors.raisinBlack, 0.1),
+                  },
+                  textTransform: "none",
+                  fontSize: "1rem",
+                  fontWeight: "bold",
+                  borderRadius: 1.5,
+                }}
+                onClick={() => {
+                  // Code to navigate to the WORK section
+                }}
+              >
+                <Box component="span" sx={{ pr: 2 }}>
+                  View My Work
+                </Box>
+              </Button>
+            </motion.div>
+          </Grid>
+          <Grid
+            item
+            sx={{
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              mt: 1,
+              mb: 3,
             }}
           >
             <SocialMediaContainer />
