@@ -57,7 +57,7 @@ const Hero = () => {
                 Fadi
               </MaskedTypography>
               <MaskedTypography variant="h5">
-                Software Engineer
+                A Software Engineer
               </MaskedTypography>
             </motion.div>
           </Grid>

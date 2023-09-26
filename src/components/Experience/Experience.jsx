@@ -2,15 +2,17 @@ import React from "react";
 import { Typography } from "@mui/material";
 import { EmorphedBox } from "components/core/EmorphedBox";
 
-const Contact = () => {
+const Experience = () => {
   return (
     <EmorphedBox>
       <Typography variant="h6" gutterBottom>
-        Contact Me
+        Experience
       </Typography>
-      <Typography variant="body1">Drop me a line.</Typography>
+      <Typography variant="body1">
+        A collection of my latest Experience.
+      </Typography>
     </EmorphedBox>
   );
 };
 
-export default Contact;
+export default Experience;

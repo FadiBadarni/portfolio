@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <EmorphedBox>
       <Typography variant="body1" align="center">
-        © 2023 by [Your Name]. All rights reserved.
+        © 2023 by Fadi. All rights reserved.
       </Typography>
     </EmorphedBox>
   );

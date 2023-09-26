@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 import { Box } from "@mui/material";
 
 export const EmorphedBox = styled(Box)`
+  padding: 32px;
+  border-radius: 24px;
   position: relative;
   background: linear-gradient(
     rgba(255, 255, 255, 0) 0%,
