@@ -37,11 +37,26 @@ const Navbar = () => {
   };
   return (
     <AppBar
-      position="static"
+      position="sticky"
       elevation={0}
       sx={{
-        background: `${Colors.raisinBlack}`,
-        boxShadow: `0px 2px 0px 0px rgba(0, 0, 0, 0.1)`,
+        background: `rgba(32, 27, 39, 0.9)`,
+        backdropFilter: "blur(8px)",
+        borderRadius: "10px",
+        boxShadow: `0px 4px 14px rgba(237, 231, 246, 0.2), 0px 2px 4px rgba(0, 0, 0, 0.1)`, // Add soft box-shadow
+
+        "&::after": {
+          content: '""',
+          display: "block",
+          position: "absolute",
+          left: 0,
+          right: 0,
+          bottom: 0,
+          height: "5px",
+          background:
+            "radial-gradient(circle, rgba(237, 231, 246, 0.1), transparent)",
+          zIndex: -1,
+        },
       }}
     >
       <Toolbar>
