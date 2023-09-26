@@ -11,9 +11,9 @@ const theme = createTheme({
     fontFamily: "'Source Sans 3', sans-serif",
   },
   palette: {
-    background: {
-      default: `${Colors.raisinBlack}`,
-    },
+    // background: {
+    //   default: `${Colors.raisinBlack}`,
+    // },
     text: {
       primary: `${Colors.cultered}`,
     },
@@ -24,7 +24,18 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="App">
+      <div
+        className="App"
+        style={{
+          backgroundColor: `${Colors.raisinBlack}`,
+          background: `
+        radial-gradient(circle at 20% 40%, rgba(237, 231, 246, 0.05) 0%,
+         ${Colors.raisinBlack} 70%),
+        radial-gradient(circle at 80% 50%, rgba(168, 171, 174, 0.2) 0%,
+         ${Colors.raisinBlack} 70%)
+      `,
+        }}
+      >
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

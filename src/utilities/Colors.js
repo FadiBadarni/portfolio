@@ -3,6 +3,7 @@ const Colors = {
   vibrantPurple: "#9400D3",
   darkPurple: "#1B0126",
   grey: "#808080",
+  aestheticSilver: "#A8ABAE",
   softLavender: "#EDE7F6",
   white: "#FFFFFF",
   cultered: "#f8f7f8",
