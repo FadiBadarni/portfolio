@@ -1,8 +1,8 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import { EmorphedBox } from "components/core/EmorphedBox";
+import { EmorphedBox } from "../core/EmorphedBox";
 
-const Contact = () => {
+const About = () => {
   return (
     <EmorphedBox
       sx={{
@@ -11,11 +11,11 @@ const Contact = () => {
       }}
     >
       <Typography variant="h6" gutterBottom>
-        Contact Me
+        About Me
       </Typography>
       <Typography variant="body1">Drop me a line.</Typography>
     </EmorphedBox>
   );
 };
 
-export default Contact;
+export default About;

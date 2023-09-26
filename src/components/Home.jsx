@@ -5,6 +5,7 @@ import Skills from "components/Skills/Skills";
 import Contact from "components/Contact/Contact";
 import Footer from "components/Footer/Footer";
 import Hero from "components/Hero/Hero";
+import About from "components/About/About";
 
 const Home = () => {
   return (
@@ -23,7 +24,10 @@ const Home = () => {
       </Grid>
 
       {/* Main Content */}
-      <Grid container spacing={6}>
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <About />
+        </Grid>
         <Grid item xs={12}>
           <Projects />
         </Grid>

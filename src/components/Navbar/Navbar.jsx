@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import { motion, AnimatePresence } from "framer-motion";
-import Colors from "../../utilities/Colors";
+import Colors from "utilities/Colors";
 import MobileDrawer from "./MobileDrawer";
 
 const navItems = [
