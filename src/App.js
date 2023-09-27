@@ -9,7 +9,7 @@ import "./App.css";
 
 const theme = createTheme({
   typography: {
-    fontFamily: "'Source Sans 3', sans-serif",
+    fontFamily: "'Work Sans', sans-serif",
   },
   palette: {
     background: {
