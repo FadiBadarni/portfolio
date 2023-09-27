@@ -7,6 +7,7 @@ import Footer from "components/Footer/Footer";
 import Hero from "components/Hero/Hero";
 import About from "components/About/About";
 import { MaskedTypography } from "components/core/MaskedTypography";
+import Work from "components/Work/Work";
 
 const Home = () => {
   return (
@@ -35,9 +36,11 @@ const Home = () => {
         <Grid item xs={12}>
           <Skills />
         </Grid>
-
         <Grid item xs={12}>
           <Projects />
+        </Grid>
+        <Grid item xs={12}>
+          <Work />
         </Grid>
         <Grid item xs={12}>
           <Contact />
