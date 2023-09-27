@@ -1,7 +1,8 @@
-import React from "react";
-import { Typography, Box, Divider } from "@mui/material";
+import React, { useState } from "react";
+import { Typography, Box, Divider, Grid } from "@mui/material";
 import { EmorphedBox } from "components/core/EmorphedBox";
 import { motion } from "framer-motion";
+import Experience from "components/Experience/Experience";
 
 const skillsData = [
   {
@@ -13,7 +14,7 @@ const skillsData = [
       { name: "Python", icon: "python/python-original.svg" },
       { name: "Java", icon: "java/java-original.svg" },
       { name: "MySQL", icon: "mysql/mysql-original.svg" },
-      { name: "Spring Boot", icon: "spring/spring-original.svg" },
+      { name: "Spring", icon: "spring/spring-original.svg" },
       { name: "PostgreSQL", icon: "postgresql/postgresql-original.svg" },
     ],
   },
@@ -34,8 +35,11 @@ const skillsData = [
   },
 ];
 
-const SkillBox = ({ skill }) => (
-  <motion.div whileHover={{ scale: 1.1 }}>
+const SkillBox = ({ skill, setSelectedSkill }) => (
+  <motion.div
+    whileHover={{ scale: 1.1 }}
+    onClick={() => setSelectedSkill(skill.name)}
+  >
     <Box
       sx={{
         display: "flex",
@@ -59,43 +63,56 @@ const SkillBox = ({ skill }) => (
   </motion.div>
 );
 
-const Skills = () => (
-  <EmorphedBox>
-    <Typography variant="h6" gutterBottom>
-      Skills
-    </Typography>
-
-    {skillsData.map((group) => (
-      <Box sx={{ marginBottom: "20px" }} key={group.level}>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          sx={{
-            mb: 1,
-          }}
-        >
-          {group.level}
-        </Typography>
-        <Divider
-          sx={{
-            backgroundColor: "white",
-            mb: 2,
-          }}
-        />
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "10px",
-          }}
-        >
-          {group.skills.map((skill) => (
-            <SkillBox skill={skill} key={skill.name} />
+const Skills = () => {
+  const [selectedSkill, setSelectedSkill] = useState(null);
+  return (
+    <EmorphedBox>
+      <Typography variant="h6" gutterBottom>
+        Skills
+      </Typography>
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={6}>
+          {skillsData.map((group) => (
+            <Box sx={{ marginBottom: "20px" }} key={group.level}>
+              <Typography
+                variant="subtitle1"
+                align="center"
+                sx={{
+                  mb: 1,
+                }}
+              >
+                {group.level}
+              </Typography>
+              <Divider
+                sx={{
+                  backgroundColor: "white",
+                  mb: 2,
+                }}
+              />
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "10px",
+                }}
+              >
+                {group.skills.map((skill) => (
+                  <SkillBox
+                    skill={skill}
+                    key={skill.name}
+                    setSelectedSkill={setSelectedSkill}
+                  />
+                ))}
+              </Box>
+            </Box>
           ))}
-        </Box>
-      </Box>
-    ))}
-  </EmorphedBox>
-);
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Experience selectedSkill={selectedSkill} />
+        </Grid>
+      </Grid>
+    </EmorphedBox>
+  );
+};
 
 export default Skills;
