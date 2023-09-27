@@ -1,13 +1,12 @@
 import React from "react";
 import { Container, Grid } from "@mui/material";
-import Work from "components/Work/Work";
+import Projects from "components/Projects/Projects";
 import Skills from "components/Skills/Skills";
 import Contact from "components/Contact/Contact";
 import Footer from "components/Footer/Footer";
 import Hero from "components/Hero/Hero";
 import About from "components/About/About";
 import { MaskedTypography } from "components/core/MaskedTypography";
-import Experience from "components/Experience/Experience";
 
 const Home = () => {
   return (
@@ -33,14 +32,12 @@ const Home = () => {
           </MaskedTypography>
           <About />
         </Grid>
-        <Grid item xs={12} md={7}>
+        <Grid item xs={12}>
           <Skills />
         </Grid>
-        <Grid item xs={12} md={5}>
-          <Experience />
-        </Grid>
+
         <Grid item xs={12}>
-          <Work />
+          <Projects />
         </Grid>
         <Grid item xs={12}>
           <Contact />
