@@ -21,4 +21,5 @@ export const MaskedTextField = styled(TextField)`
     rgba(240, 240, 240, 0.12),
     rgba(240, 240, 240, 0.08)
   );
+  border-radius: 5px;
 `;

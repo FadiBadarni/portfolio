@@ -3,7 +3,6 @@ import { Box, Typography } from "@mui/material";
 import { motion, useAnimation } from "framer-motion";
 import { EmorphedBox } from "./EmorphedBox";
 import { GitHub, LinkedIn } from "@mui/icons-material";
-import Colors from "utilities/Colors";
 
 export const SocialMediaContainer = () => {
   const githubControls = useAnimation();
@@ -48,21 +47,6 @@ export const SocialMediaContainer = () => {
           right: 0,
           bottom: 0,
           borderRadius: "inherit",
-          background: `
-          conic-gradient(
-            from 0deg at 50% 50%,
-            ${Colors.darkPurple} 0deg,
-            ${Colors.darkPurple} 90deg,
-            ${Colors.darkPurple} 135deg,
-            ${Colors.grey} 180deg,
-            ${Colors.softLavender} 225deg,
-            ${Colors.white} 270deg,
-            ${Colors.softLavender} 315deg,
-            ${Colors.deepIndigo} 360deg
-          )
-
-
-        `,
           pointerEvents: "none",
           zIndex: -1,
         },
