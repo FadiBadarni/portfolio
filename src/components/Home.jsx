@@ -21,28 +21,29 @@ const Home = () => {
           alignItems: "center",
           height: "100%",
         }}
+        id="home"
       >
         <Hero />
       </Grid>
 
       {/* Main Content */}
       <Grid container spacing={3}>
-        <Grid item xs={12}>
+        <Grid item xs={12} id="about">
           <MaskedTypography variant="h4" gutterBottom align="center">
             About Me
           </MaskedTypography>
           <About />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} id="skills">
           <Skills />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} id="projects">
           <Projects />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} id="work">
           <Work />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} id="contact">
           <Contact />
         </Grid>
       </Grid>

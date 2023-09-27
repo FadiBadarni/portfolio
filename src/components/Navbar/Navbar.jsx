@@ -15,7 +15,7 @@ import Colors from "utilities/Colors";
 import MobileDrawer from "./MobileDrawer";
 
 const navItems = [
-  { title: "Home", path: "/" },
+  { title: "Home", path: "/home" },
   { title: "About", path: "/about" },
   { title: "Work", path: "/work" },
   { title: "Skills", path: "/skills" },
@@ -43,7 +43,7 @@ const Navbar = () => {
         background: `rgba(32, 27, 39, 0.9)`,
         backdropFilter: "blur(8px)",
         borderRadius: "10px",
-        boxShadow: `0px 4px 14px rgba(237, 231, 246, 0.2), 0px 2px 4px rgba(0, 0, 0, 0.1)`, // Add soft box-shadow
+        boxShadow: `0px 4px 14px rgba(237, 231, 246, 0.2), 0px 2px 4px rgba(0, 0, 0, 0.1)`,
 
         "&::after": {
           content: '""',
@@ -63,7 +63,7 @@ const Navbar = () => {
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item>
             <Typography variant="h6" component="div">
-              Fadi Solutions
+              Dev Fadi
             </Typography>
           </Grid>
 
@@ -94,7 +94,14 @@ const Navbar = () => {
                         whileTap={{ scale: 0.9 }}
                       >
                         <Button
-                          href={item.path}
+                          onClick={() => {
+                            const element = document.getElementById(
+                              item.path.substring(1)
+                            );
+                            if (element) {
+                              element.scrollIntoView({ behavior: "smooth" });
+                            }
+                          }}
                           sx={{
                             color: `${Colors.cultered}`,
                             fontSize: "1rem",
@@ -114,9 +121,17 @@ const Navbar = () => {
                   whileTap={{ scale: 0.9 }}
                 >
                   <Button
-                    href={navItems[navItems.length - 1].path}
+                    onClick={() => {
+                      const element = document.getElementById(
+                        navItems[navItems.length - 1].path.substring(1)
+                      );
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth" });
+                      }
+                    }}
                     sx={{
                       color: `${Colors.cultered}`,
+                      fontSize: "1rem",
                     }}
                   >
                     {navItems[navItems.length - 1].title}
