@@ -19,12 +19,14 @@ export const SkillBox = ({ skill, setSelectedSkill }) => (
         cursor: "pointer",
       }}
     >
-      <img
-        src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill.icon}`}
-        alt={`${skill.name} logo`}
-        width="20"
-        height="20"
-      />
+      {skill.icon && (
+        <img
+          src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${skill.icon}`}
+          alt={`${skill.name} logo`}
+          width="20"
+          height="20"
+        />
+      )}
 
       <Typography variant="body2">{skill.name}</Typography>
     </Box>

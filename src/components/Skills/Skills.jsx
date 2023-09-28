@@ -14,27 +14,33 @@ const skillsData = [
       { name: "Spring", icon: "spring/spring-original.svg" },
       { name: "Python", icon: "python/python-original.svg" },
       { name: "Git", icon: "git/git-original.svg" },
+      { name: "MUI", icon: "materialui/materialui-original.svg" },
       { name: "PostgreSQL", icon: "postgresql/postgresql-original.svg" },
       { name: "HTML", icon: "html5/html5-original.svg" },
       { name: "CSS", icon: "css3/css3-original.svg" },
       { name: "SASS", icon: "sass/sass-original.svg" },
+      { name: "React", icon: "react/react-original.svg" },
     ],
   },
   {
     level: "Intermediate",
     skills: [
-      { name: "JavaScript", icon: "javascript/javascript-original.svg" },
-      { name: "React", icon: "react/react-original.svg" },
       { name: "Docker", icon: "docker/docker-original.svg" },
       { name: "AWS", icon: "amazonwebservices/amazonwebservices-original.svg" },
       { name: "TypeScript", icon: "typescript/typescript-original.svg" },
       { name: "C", icon: "c/c-original.svg" },
       { name: "C++", icon: "cplusplus/cplusplus-original.svg" },
+
+      { name: "Postman", icon: "" },
     ],
   },
   {
     level: "Beginner",
-    skills: [{ name: "Next", icon: "nextjs/nextjs-original.svg" }],
+    skills: [
+      { name: "SLF4J", icon: "" },
+      { name: "Next", icon: "nextjs/nextjs-original.svg" },
+      { name: "SEO", icon: "" },
+    ],
   },
 ];
 
