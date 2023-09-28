@@ -12,14 +12,10 @@ import Work from "components/Work/Work";
 const Home = () => {
   return (
     <Container maxWidth="lg">
-      {/* Hero Section */}
       <Grid
         container
-        spacing={2}
         sx={{
-          minHeight: "100vh",
           alignItems: "center",
-          height: "100%",
         }}
         id="home"
       >
