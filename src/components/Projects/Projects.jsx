@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { Typography, Grid, Divider, Box } from "@mui/material";
+import {
+  Typography,
+  Grid,
+  Divider,
+  Box,
+  useTheme,
+  useMediaQuery,
+} from "@mui/material";
 import { EmorphedBox } from "components/core/EmorphedBox";
 import { projectsData } from "./projectsData";
 import ProjectDetails from "./ProjectDetails";
@@ -8,6 +15,8 @@ import { MaskedTypography } from "components/core/MaskedTypography";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <EmorphedBox>
@@ -22,7 +31,7 @@ const Projects = () => {
             }}
           >
             <Typography
-              variant="h2"
+              variant={isMobile ? "h3" : "h2"}
               gutterBottom
               sx={{
                 fontWeight: "bold",
@@ -40,7 +49,7 @@ const Projects = () => {
             </Typography>
 
             <Typography
-              variant="h3"
+              variant={isMobile ? "h4" : "h3"}
               sx={{
                 fontWeight: "bold",
                 background: `linear-gradient(
@@ -60,7 +69,7 @@ const Projects = () => {
           <Box
             sx={{
               zIndex: 2,
-              height: "400px",
+              height: isMobile ? "300px" : "400px",
               overflowY: "scroll",
               overflowX: "visible",
               "&::-webkit-scrollbar": { width: "0px", height: "0px" },
@@ -84,10 +93,12 @@ const Projects = () => {
                     }}
                     onClick={() => setSelectedProject(project)}
                   >
-                    <MaskedTypography variant="h5">
+                    <MaskedTypography variant={isMobile ? "subtitle1" : "h5"}>
                       {project.title}
                     </MaskedTypography>
-                    <MaskedTypography variant="subtitle2">
+                    <MaskedTypography
+                      variant={isMobile ? "caption" : "subtitle2"}
+                    >
                       {project.type}
                     </MaskedTypography>
                   </EmorphedBoxVariant>

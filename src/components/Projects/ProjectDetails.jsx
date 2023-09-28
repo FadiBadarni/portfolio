@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Grid } from "@mui/material";
+import { Box, Typography, Grid, useTheme, useMediaQuery } from "@mui/material";
 import Colors from "utilities/Colors";
 import { StyledChip } from "components/core/StyledChip";
 import { Carousel } from "react-responsive-carousel";
@@ -8,13 +8,16 @@ import { EmorphedBoxVariant2 } from "components/core/EmorphedBoxVariant2";
 import { motion } from "framer-motion";
 
 const ProjectDetails = ({ selectedProject }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <EmorphedBoxVariant2
-      sx={{
+      style={{
         transition: "all 0.5s",
         height: "500px",
-        borderRadius: 1,
-        p: 2,
+        borderRadius: "15px",
+        padding: isMobile ? "1rem" : "2rem",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -35,7 +38,7 @@ const ProjectDetails = ({ selectedProject }) => {
           }}
         >
           <Typography
-            variant="h4"
+            variant={isMobile ? "h6" : "h4"}
             gutterBottom
             component="div"
             color="white"
@@ -52,24 +55,15 @@ const ProjectDetails = ({ selectedProject }) => {
             <Grid container justifyContent="center" alignItems="center">
               <Grid item xs={12}>
                 <Typography
-                  variant="body1"
-                  color={Colors.grey}
+                  variant={isMobile ? "body2" : "body1"}
+                  color={Colors.aestheticSilver}
                   align="left"
                   sx={{ mb: 1 }}
                 >
                   {selectedProject.description}
                 </Typography>
               </Grid>
-              <Grid item xs={12}>
-                <Typography
-                  variant="body2"
-                  color={Colors.grey}
-                  align="left"
-                  sx={{ mb: 1 }}
-                >
-                  {selectedProject.detailedDescription}
-                </Typography>
-              </Grid>
+
               <Grid
                 item
                 xs={12}
@@ -93,12 +87,17 @@ const ProjectDetails = ({ selectedProject }) => {
                             sx={{
                               display: "flex",
                               justifyContent: "center",
+                              alignItems: "center",
                             }}
                           >
                             <img
                               src={img}
                               alt={`Project ${index + 1}`}
-                              style={{ maxWidth: "100%" }}
+                              style={{
+                                height: 200,
+                                width: 300,
+                                objectFit: "contain",
+                              }}
                             />
                           </Box>
                         ))}
