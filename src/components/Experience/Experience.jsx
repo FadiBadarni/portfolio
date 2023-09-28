@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Typography,
   Box,
@@ -11,18 +11,25 @@ import { EmorphedBox } from "components/core/EmorphedBox";
 import { experienceData } from "./experienceData";
 import { StyledChip } from "components/core/StyledChip";
 import { motion } from "framer-motion";
+import { MaskedButton } from "components/core/MaskedButton";
+import DetailsModal from "./DetailsModal";
 
 const Experience = ({ selectedSkill }) => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
-
+  const [open, setOpen] = useState(false); // State to control the modal
   const skillExperience = experienceData[selectedSkill] || {};
+  const MAX_SUBSKILLS = 6;
+
+  const handleOpen = () => setOpen(true); // Function to open the modal
+
+  const handleClose = () => setOpen(false); // Function to close the modal
 
   return (
     <EmorphedBox
       sx={{
-        height: "100%",
+        height: "520px",
       }}
     >
       <Grid container spacing={2}>
@@ -78,48 +85,79 @@ const Experience = ({ selectedSkill }) => {
         </Grid>
 
         {Object.keys(skillExperience).includes("Sub-skills") && (
-          <Grid item xs={12}>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{
-                duration: 0.5,
-              }}
-            >
-              <Typography
-                variant={isSmallScreen ? "body2" : "h6"}
-                gutterBottom
-                sx={{ textAlign: "center", mb: 2 }}
+          <>
+            <Grid item xs={12}>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{
+                  duration: 0.5,
+                }}
               >
-                Sub-Skills
-              </Typography>
-              <Stack
-                direction={isSmallScreen ? "column" : "row"}
-                spacing={1}
-                gap={1}
-                alignItems="center"
-                justifyContent="center"
-                flexWrap="wrap"
-              >
-                {skillExperience["Sub-skills"].map((skill, index) => (
-                  <StyledChip
-                    label={skill}
-                    key={index}
-                    style={{
-                      width: isSmallScreen
-                        ? "100%"
-                        : isMediumScreen
-                        ? "50%"
+                <Typography
+                  variant={isSmallScreen ? "body2" : "h6"}
+                  gutterBottom
+                  sx={{ textAlign: "center", mb: 2 }}
+                >
+                  Sub-Skills
+                </Typography>
+                <Stack
+                  direction={isSmallScreen ? "column" : "row"}
+                  spacing={1}
+                  gap={1}
+                  alignItems="center"
+                  justifyContent="center"
+                  flexWrap="wrap"
+                  sx={{
+                    height:
+                      skillExperience["Sub-skills"].length > MAX_SUBSKILLS
+                        ? "80px"
                         : "auto",
+                    overflow:
+                      skillExperience["Sub-skills"].length > MAX_SUBSKILLS
+                        ? "hidden"
+                        : "visible",
+                  }}
+                >
+                  {skillExperience["Sub-skills"].map((skill, index) => (
+                    <StyledChip
+                      label={skill}
+                      key={index}
+                      style={{
+                        width: isSmallScreen
+                          ? "100%"
+                          : isMediumScreen
+                          ? "50%"
+                          : "auto",
+                      }}
+                    />
+                  ))}
+                </Stack>
+                {skillExperience["Sub-skills"].length > MAX_SUBSKILLS && (
+                  <Grid
+                    item
+                    xs={12}
+                    container
+                    justifyContent="center"
+                    alignItems="center"
+                    sx={{
+                      mt: 2,
                     }}
-                  />
-                ))}
-              </Stack>
-            </motion.div>
-          </Grid>
+                  >
+                    <MaskedButton onClick={handleOpen}>Show More</MaskedButton>
+                  </Grid>
+                )}
+              </motion.div>
+            </Grid>
+          </>
         )}
       </Grid>
+      <DetailsModal
+        open={open}
+        handleClose={handleClose}
+        subSkills={skillExperience["Sub-skills"] || []}
+      />
     </EmorphedBox>
   );
 };
