@@ -1,26 +1,40 @@
 import React from "react";
-import { Typography, Grid } from "@mui/material";
+import { Typography, Grid, useTheme, useMediaQuery } from "@mui/material";
 import GetAppIcon from "@mui/icons-material/GetApp";
 import { EmorphedBox } from "components/core/EmorphedBox";
 import { MaskedButton } from "components/core/MaskedButton";
 import Interests from "./Interests";
 
 const About = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <EmorphedBox
       sx={{
-        background: "#F9F9F9",
-        boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
+        padding: isMobile ? theme.spacing(1) : theme.spacing(2),
       }}
     >
       <Grid
         container
         direction="column"
-        justifyContent="space-between"
-        style={{ height: "100%" }}
+        spacing={isMobile ? 1 : 2}
+        sx={{
+          height: "100%",
+        }}
       >
-        <Grid item>
-          <Typography variant="body1" paragraph sx={{ marginBottom: 2 }}>
+        <Grid item xs={12}>
+          <Typography
+            variant="body1"
+            paragraph
+            sx={{
+              marginBottom: 2,
+              fontSize: isMobile ? "1rem" : "1.1rem",
+            }}
+          >
             I'm a self-driven, collaborative, and learning-focused undergraduate
             software engineering student looking for a challenging internship
             position where I can use my problem-solving abilities, creative
@@ -29,17 +43,17 @@ const About = () => {
             software engineering.
           </Typography>
         </Grid>
-        <Grid item>
+        <Grid item xs={12}>
           <Interests />
         </Grid>
-        <Grid item style={{ textAlign: "right" }}>
+        <Grid item xs={12} sx={{ textAlign: isMobile ? "center" : "right" }}>
           <MaskedButton
             variant="contained"
             startIcon={<GetAppIcon />}
             sx={{
               marginTop: 2,
               textTransform: "none",
-              padding: "10px 20px",
+              padding: isMobile ? "8px 16px" : "10px 20px",
               fontSize: "0.9rem",
             }}
           >
