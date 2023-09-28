@@ -1,39 +1,98 @@
 export const experienceData = {
   Spring: {
     Overview:
-      "I have used Spring Boot in various projects for creating RESTful services, building robust and scalable backend applications.",
+      "I have extensive experience in developing scalable and maintainable applications using the Spring Framework, specializing in Spring Boot for creating RESTful APIs and implementing business logic, Spring Security for implementing robust security configurations, user authentication, and authorization, and Spring Web for designing and developing web components and managing HTTP requests and responses.",
     "Sub-skills": [
-      "Spring Security",
-      "Spring Data JPA",
-      "Spring Exception Handler",
-      "Spring Boot Actuator",
-      "Spring Boot DevTools",
+      "REST API Development",
+      "Data Validation",
+      "Entity Mapping",
+      "Dependency Injection",
+      "Exception Handling",
+      "Data Persistence",
+      "Object-Relational Mapping (ORM)",
+      "User Authentication and Authorization",
+      "Custom Security Filters",
+      "Role-Based Access Control",
+      "HTTP Security Configurations",
+      "CORS Configurations",
+      "JWT Integration",
+      "Controller Annotations",
+      "Request Mapping",
+      "Response Handling",
+      "Status Code Management",
     ],
   },
   HTML: {
     Overview:
-      "Experienced in creating markup for web applications, adhering to semantic and accessible principles.",
-    "Sub-skills": ["HTML5", "Semantic HTML", "Accessibility"],
+      "Proficient in structuring web pages using HTML5, ensuring proper formatting, linking, and styling. Familiar with integrating various resources and elements such as fonts, stylesheets, and scripts, and creating navigational elements, sections, and forms.",
+    "Sub-skills": [
+      "HTML5 Semantic Elements",
+      "Navigation",
+      "Meta Tags",
+      "Data Presentation",
+      "Dynamic Rendering",
+    ],
+  },
+  MUI: {
+    Overview:
+      "Experienced in leveraging Material-UI to build responsive, user-friendly interfaces, focusing on optimal user experience and efficient development practices.",
+    "Sub-skills": [
+      "Grid System",
+      "Styled Components",
+      "Styling",
+      "Responsive Design",
+      "Box Layout",
+      "Theming",
+    ],
   },
   CSS: {
     Overview:
       "Skilled in styling web pages with a focus on responsive and dynamic designs.",
-    "Sub-skills": ["Flexbox", "Grid", "CSS Variables"],
+    "Sub-skills": [
+      "Responsive Design",
+      "Pseudo-elements",
+      "Media Queries",
+      "Hover Effects",
+      "Transitions",
+      "Transformations",
+    ],
   },
   SASS: {
     Overview:
       "Familiar with SASS preprocessor to create modular, maintainable styles.",
-    "Sub-skills": ["Variables", "Mixins", "Functions"],
+    "Sub-skills": [
+      "Variables",
+      "Mixins",
+      "Nesting",
+      "Importing",
+      "Responsive Design",
+      "Modularization",
+    ],
   },
   Python: {
     Overview:
       "Utilized Python in various projects, including web development, scripting, and data analysis.",
-    "Sub-skills": ["Flask", "Django", "Pandas"],
+    "Sub-skills": [
+      "System Monitoring",
+      "File Management",
+      "Data Processing",
+      "Pipelines",
+      "Conventional Interfaces",
+    ],
   },
   Java: {
     Overview:
-      "Experience in Java for building robust, scalable backend services and applications.",
-    "Sub-skills": ["JVM", "Collections", "Concurrency"],
+      "Proficient in Java programming, emphasizing clean, efficient, and secure code. Experienced in developing scalable and maintainable applications, focusing on service-oriented architecture, and adept at using advanced features of Java.",
+    "Sub-skills": [
+      "Object-Oriented Programming",
+      "Annotations",
+      "Generics",
+      "Lambdas",
+      "Stream API",
+      "Design Patterns",
+      "Exception Handling",
+      "Transactional Management",
+    ],
   },
   MySQL: {
     Overview:
@@ -42,8 +101,15 @@ export const experienceData = {
   },
   PostgreSQL: {
     Overview:
-      "Used PostgreSQL in projects requiring relational database solutions, capable of handling complex queries.",
-    "Sub-skills": ["PL/pgSQL", "Window Functions", "CTEs"],
+      "Experienced in utilizing PostgreSQL to create efficient and effective queries for data retrieval, focusing on optimizing performance and ensuring data integrity.",
+    "Sub-skills": [
+      "Data Retrieval",
+      "Join Operations",
+      "Aggregation",
+      "Conditional Logic",
+      "Subqueries",
+      "Filtering",
+    ],
   },
   JavaScript: {
     Overview:
