@@ -1,13 +1,28 @@
-import React from "react";
-import { Typography, Grid, useTheme, useMediaQuery } from "@mui/material";
-import GetAppIcon from "@mui/icons-material/GetApp";
+import React, { useState } from "react";
+import { Typography, Grid, useTheme, useMediaQuery, Box } from "@mui/material";
+import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import { EmorphedBox } from "components/core/EmorphedBox";
 import { MaskedButton } from "components/core/MaskedButton";
 import Interests from "./Interests";
+import { Modal } from "@mui/material";
 
 const About = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    if (isMobile) {
+      // Open PDF in a new tab for mobile screens
+      window.open(`${process.env.PUBLIC_URL}/assets/Resume.pdf`, "_blank");
+    } else {
+      // Open the modal for larger screens
+      setOpen(true);
+    }
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <EmorphedBox
@@ -48,8 +63,9 @@ const About = () => {
         </Grid>
         <Grid item xs={12} sx={{ textAlign: isMobile ? "center" : "right" }}>
           <MaskedButton
+            onClick={handleOpen}
             variant="contained"
-            startIcon={<GetAppIcon />}
+            startIcon={<RemoveRedEyeOutlinedIcon />}
             sx={{
               marginTop: 2,
               textTransform: "none",
@@ -57,10 +73,39 @@ const About = () => {
               fontSize: "0.9rem",
             }}
           >
-            Download CV
+            View CV
           </MaskedButton>
         </Grid>
       </Grid>
+      {!isMobile && (
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+        >
+          <Box
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              width: "60%",
+              maxHeight: "90%",
+              backgroundColor: "background.paper",
+              padding: 1,
+              overflowY: "auto",
+              borderRadius: 5,
+            }}
+          >
+            <img
+              src={`${process.env.PUBLIC_URL}/assets/Resume.svg`}
+              alt="Resume"
+              style={{ width: "100%", height: "auto" }}
+            />
+          </Box>
+        </Modal>
+      )}
     </EmorphedBox>
   );
 };
