@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Grid, Box } from "@mui/material";
+import { Typography, Grid, Box, useTheme, useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
 import { EmorphedBox } from "components/core/EmorphedBox";
 import { MaskedTextField } from "components/core/MaskedTextField";
@@ -7,6 +7,9 @@ import { MaskedButton } from "components/core/MaskedButton";
 import Colors from "utilities/Colors";
 
 const Contact = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <EmorphedBox>
       <Typography variant="h4" gutterBottom align="center">
@@ -15,7 +18,7 @@ const Contact = () => {
       <Grid container spacing={3} justifyContent="center">
         <Grid
           item
-          xs={12}
+          xs={6}
           sm={4}
           container
           justifyContent="center"
@@ -36,14 +39,22 @@ const Contact = () => {
                     ${Colors.raisinBlack} 85%
                   )`,
                 borderRadius: 4,
-                width: "220px",
+                width: isMobile ? "140px" : "220px",
                 color: Colors.aestheticSilver,
               }}
             >
-              <Typography variant="h6" align="center">
+              <Typography
+                variant={isMobile ? "subtitle1" : "h6"}
+                sx={{
+                  textAlign: "center",
+                }}
+              >
                 Email
               </Typography>
-              <Typography variant="subtitle1" align="center">
+              <Typography
+                variant={isMobile ? "subtitle2" : "subtitle1"}
+                align="center"
+              >
                 fadybd1@gmail.com
               </Typography>
             </Box>
@@ -51,7 +62,7 @@ const Contact = () => {
         </Grid>
         <Grid
           item
-          xs={12}
+          xs={6}
           sm={4}
           container
           justifyContent="center"
@@ -72,14 +83,20 @@ const Contact = () => {
                     ${Colors.raisinBlack} 85%
                   )`,
                 borderRadius: 4,
-                width: "220px",
+                width: isMobile ? "140px" : "220px",
                 color: Colors.aestheticSilver,
               }}
             >
-              <Typography variant="h6" align="center">
+              <Typography
+                variant={isMobile ? "subtitle1" : "h6"}
+                align="center"
+              >
                 Phone
               </Typography>
-              <Typography variant="subtitle1" align="center">
+              <Typography
+                variant={isMobile ? "subtitle2" : "subtitle1"}
+                align="center"
+              >
                 052-418-3083
               </Typography>
             </Box>
