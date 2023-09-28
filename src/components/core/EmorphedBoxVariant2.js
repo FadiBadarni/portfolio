@@ -9,7 +9,7 @@ export const EmorphedBoxVariant2 = styled(Box)`
     rgba(240, 240, 240, 0.1) 0%,
     rgba(240, 240, 240, 0.01) 100%
   );
-
+  overflow-y: "auto",
   &::before {
     content: "";
     position: absolute;

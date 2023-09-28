@@ -21,9 +21,7 @@ const ProjectDetails = ({ selectedProject }) => {
         padding: isMobile ? "1rem" : "2rem",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        overflow: "hidden",
+        overflowY: "auto",
       }}
     >
       {selectedProject ? (
@@ -66,61 +64,99 @@ const ProjectDetails = ({ selectedProject }) => {
               </Grid>
 
               <Grid
+                container
                 item
                 xs={12}
-                md={4}
-                sx={{ display: "flex", justifyContent: "center" }}
+                spacing={2}
+                justifyContent="center"
+                alignItems="center"
               >
-                {selectedProject.URL ? (
-                  <MaskedButton
-                    variant="contained"
-                    color="primary"
-                    href={selectedProject.URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      marginTop: "1rem",
-                      marginBottom: "1rem",
-                    }}
+                {selectedProject.URL && (
+                  <Grid
+                    item
+                    xs={6}
+                    container
+                    justifyContent="center"
+                    alignItems="center"
                   >
-                    Live Website Link
-                  </MaskedButton>
-                ) : (
-                  selectedProject.images &&
-                  selectedProject.images.length > 0 && (
-                    <Box sx={{ maxWidth: "300px", mt: 2 }}>
-                      <Carousel
-                        autoPlay
-                        infiniteLoop
-                        showThumbs={false}
-                        showStatus={false}
-                        showIndicators={false}
-                        dynamicHeight
+                    <Box>
+                      <MaskedButton
+                        variant="contained"
+                        href={selectedProject.URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          marginTop: "1rem",
+                          marginBottom: "1rem",
+                        }}
                       >
-                        {selectedProject.images.map((img, index) => (
-                          <Box
-                            key={index}
-                            sx={{
-                              display: "flex",
-                              justifyContent: "center",
-                              alignItems: "center",
-                            }}
-                          >
-                            <img
-                              src={img}
-                              alt={`Project ${index + 1}`}
-                              style={{
-                                height: 200,
-                                width: 300,
-                                objectFit: "contain",
-                              }}
-                            />
-                          </Box>
-                        ))}
-                      </Carousel>
+                        Live Website
+                      </MaskedButton>
                     </Box>
-                  )
+                  </Grid>
                 )}
+
+                {selectedProject.repository && (
+                  <Grid
+                    item
+                    xs={6}
+                    container
+                    justifyContent="center"
+                    alignItems="center"
+                  >
+                    <Box>
+                      <MaskedButton
+                        variant="contained"
+                        href={selectedProject.repository}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          marginTop: "1rem",
+                          marginBottom: "1rem",
+                        }}
+                      >
+                        GitHub Repo
+                      </MaskedButton>
+                    </Box>
+                  </Grid>
+                )}
+
+                {selectedProject.images &&
+                  selectedProject.images.length > 0 && (
+                    <Grid item>
+                      <Box sx={{ maxWidth: isMobile ? "260px" : "300px" }}>
+                        <Carousel
+                          autoPlay
+                          infiniteLoop
+                          showThumbs={false}
+                          showStatus={false}
+                          showIndicators={false}
+                          dynamicHeight
+                        >
+                          {selectedProject.images.map((img, index) => (
+                            <Box
+                              key={index}
+                              sx={{
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                              }}
+                            >
+                              <img
+                                src={img}
+                                alt={`Project ${index + 1}`}
+                                style={{
+                                  height: 200,
+                                  width: 260,
+                                  objectFit: "contain",
+                                }}
+                              />
+                            </Box>
+                          ))}
+                        </Carousel>
+                      </Box>
+                    </Grid>
+                  )}
               </Grid>
 
               <Grid item xs={12}>
@@ -133,9 +169,44 @@ const ProjectDetails = ({ selectedProject }) => {
                     mt: 2,
                   }}
                 >
-                  {selectedProject.technologies.map((tech, index) => (
-                    <StyledChip label={tech} key={index} />
-                  ))}
+                  {selectedProject.technologies &&
+                    Object.keys(selectedProject.technologies).map((category) =>
+                      selectedProject.technologies[category].length > 0 ? (
+                        <Box
+                          key={category}
+                          sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            m: 0.5,
+                          }}
+                        >
+                          <Typography
+                            variant="subtitle1"
+                            color="white"
+                            sx={{
+                              mb: 0.3,
+                            }}
+                          >
+                            {category[0].toUpperCase() + category.slice(1)}
+                          </Typography>
+                          <Box
+                            sx={{
+                              display: "flex",
+                              flexWrap: "wrap",
+                              gap: "10px",
+                              justifyContent: "center",
+                            }}
+                          >
+                            {selectedProject.technologies[category].map(
+                              (tech, index) => (
+                                <StyledChip label={tech} key={index} />
+                              )
+                            )}
+                          </Box>
+                        </Box>
+                      ) : null
+                    )}
                 </Box>
               </Grid>
             </Grid>
