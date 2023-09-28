@@ -6,12 +6,11 @@ export const EmorphedBoxVariant = styled(Box, {
   shouldForwardProp: (prop) =>
     rootShouldForwardProp(prop) && prop !== "isActive",
 })`
-  padding: 12px;
+  padding: 16px;
   border-radius: 8px;
   position: relative;
   box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease-in-out;
-
   left: ${(props) => (props.isActive ? "10%" : "0%")};
 
   background: ${(props) =>

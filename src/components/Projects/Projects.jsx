@@ -26,11 +26,35 @@ const Projects = () => {
               gutterBottom
               sx={{
                 fontWeight: "bold",
+                background: `linear-gradient(
+                  rgba(255, 255, 255, 0.5) 0%,
+                  rgba(255, 255, 255, 0.05) 100%
+                )`,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                display: "inline-flex",
+                alignItems: "center",
               }}
             >
               Projects
             </Typography>
-            <Typography variant="h4">{projectsData.length}</Typography>
+
+            <Typography
+              variant="h3"
+              sx={{
+                fontWeight: "bold",
+                background: `linear-gradient(
+                  rgba(255, 255, 255, 0.8) 0%,
+                  rgba(255, 255, 255, 0.01) 100%
+                )`,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                display: "inline-flex",
+                alignItems: "center",
+              }}
+            >
+              {projectsData.length}
+            </Typography>
           </Box>
           <Divider sx={{ mb: 2, background: "white" }} />
           <Box
@@ -45,19 +69,12 @@ const Projects = () => {
           >
             <Grid container spacing={2} direction="column">
               {projectsData.map((project, index) => (
-                <Grid
-                  item
-                  xs={12}
-                  key={index}
-                  sx={{
-                    pr: 1,
-                  }}
-                >
+                <Grid item xs={12} key={index}>
                   <EmorphedBoxVariant
                     isActive={
                       selectedProject && selectedProject.title === project.title
                     }
-                    sx={{
+                    style={{
                       display: "flex",
                       justifyContent: "space-between",
                       alignItems: "center",
@@ -70,7 +87,7 @@ const Projects = () => {
                     <MaskedTypography variant="h5">
                       {project.title}
                     </MaskedTypography>
-                    <MaskedTypography variant="subtitle1">
+                    <MaskedTypography variant="subtitle2">
                       {project.type}
                     </MaskedTypography>
                   </EmorphedBoxVariant>
