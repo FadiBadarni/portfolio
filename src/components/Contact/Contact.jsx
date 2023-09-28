@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { EmorphedBox } from "components/core/EmorphedBox";
 import { MaskedTextField } from "components/core/MaskedTextField";
 import { MaskedButton } from "components/core/MaskedButton";
+import Colors from "utilities/Colors";
 
 const Contact = () => {
   return (
@@ -27,14 +28,16 @@ const Contact = () => {
           >
             <Box
               sx={{
-                background: `linear-gradient(
-                  to bottom,
-                  rgba(255, 255, 255, 0.01) 0%,
-                  rgba(255, 255, 255, 0.1) 50%,
-                  rgba(255, 255, 255, 0.01) 100%
-                )`,
-                borderRadius: 10,
-                width: "250px",
+                background: `
+                  linear-gradient(
+                    145deg,
+                    ${Colors.raisinBlack} 15%,
+                    rgba(101, 92, 115, 0.5) 50%,
+                    ${Colors.raisinBlack} 85%
+                  )`,
+                borderRadius: 4,
+                width: "220px",
+                color: Colors.aestheticSilver,
               }}
             >
               <Typography variant="h6" align="center">
@@ -61,14 +64,16 @@ const Contact = () => {
           >
             <Box
               sx={{
-                background: `linear-gradient(
-                  to bottom,
-                  rgba(255, 255, 255, 0.01) 0%,
-                  rgba(255, 255, 255, 0.1) 50%,
-                  rgba(255, 255, 255, 0.01) 100%
-                )`,
-                borderRadius: 10,
-                width: "250px",
+                background: `
+                  linear-gradient(
+                    35deg,
+                    ${Colors.raisinBlack} 15%,
+                    rgba(101, 92, 115, 0.5) 50%,
+                    ${Colors.raisinBlack} 85%
+                  )`,
+                borderRadius: 4,
+                width: "220px",
+                color: Colors.aestheticSilver,
               }}
             >
               <Typography variant="h6" align="center">
