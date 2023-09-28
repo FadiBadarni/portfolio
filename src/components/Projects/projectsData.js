@@ -1,10 +1,12 @@
 export const projectsData = [
   {
-    title: "Flight Booking Web",
+    title: "El-Yael Website",
     type: "Web Application",
-    description: "This is a description for Project 1.",
-    technologies: ["Java", "Spring"],
-    images: ["assets/flight-project.jpg"],
+    description:
+      "A comprehensive platform to study for the YAEL exam in an efficient manner.",
+    technologies: ["Spring Boot", "Spring Security", "React", "MUI"],
+    images: [],
+    URL: "https://elyael.com/",
   },
   {
     title: "Keylogger App",

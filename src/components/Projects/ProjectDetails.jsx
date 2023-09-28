@@ -6,6 +6,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { EmorphedBoxVariant2 } from "components/core/EmorphedBoxVariant2";
 import { motion } from "framer-motion";
+import { MaskedButton } from "components/core/MaskedButton";
 
 const ProjectDetails = ({ selectedProject }) => {
   const theme = useTheme();
@@ -70,7 +71,22 @@ const ProjectDetails = ({ selectedProject }) => {
                 md={4}
                 sx={{ display: "flex", justifyContent: "center" }}
               >
-                {selectedProject.images &&
+                {selectedProject.URL ? (
+                  <MaskedButton
+                    variant="contained"
+                    color="primary"
+                    href={selectedProject.URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      marginTop: "1rem",
+                      marginBottom: "1rem",
+                    }}
+                  >
+                    Live Website Link
+                  </MaskedButton>
+                ) : (
+                  selectedProject.images &&
                   selectedProject.images.length > 0 && (
                     <Box sx={{ maxWidth: "300px", mt: 2 }}>
                       <Carousel
@@ -103,7 +119,8 @@ const ProjectDetails = ({ selectedProject }) => {
                         ))}
                       </Carousel>
                     </Box>
-                  )}
+                  )
+                )}
               </Grid>
 
               <Grid item xs={12}>
