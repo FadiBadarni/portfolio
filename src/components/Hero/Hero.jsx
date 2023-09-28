@@ -120,7 +120,8 @@ const Hero = () => {
                   borderRadius: 1.5,
                 }}
                 onClick={() => {
-                  // Code to navigate to the WORK section
+                  const element = document.getElementById("projects");
+                  element.scrollIntoView({ behavior: "smooth" });
                 }}
               >
                 <Box component="span" sx={{ pr: 2 }}>

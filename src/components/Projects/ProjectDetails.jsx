@@ -120,7 +120,6 @@ const ProjectDetails = ({ selectedProject }) => {
                     </Box>
                   </Grid>
                 )}
-
                 {selectedProject.images &&
                   selectedProject.images.length > 0 && (
                     <Grid item>
