@@ -49,6 +49,7 @@ const SkillBox = ({ skill, setSelectedSkill }) => (
         padding: "10px",
         border: "1px solid #ccc",
         borderRadius: "5px",
+        cursor: "pointer",
       }}
     >
       <img
@@ -108,7 +109,9 @@ const Skills = () => {
           ))}
         </Grid>
         <Grid item xs={12} md={6}>
-          <Experience selectedSkill={selectedSkill} />
+          {selectedSkill && (
+            <Experience key={selectedSkill} selectedSkill={selectedSkill} />
+          )}
         </Grid>
       </Grid>
     </EmorphedBox>
