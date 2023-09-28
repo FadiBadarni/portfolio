@@ -43,7 +43,7 @@ const Skills = () => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleChange = (_, newValue) => {
     setSelectedTab(newValue);
@@ -51,12 +51,18 @@ const Skills = () => {
 
   return (
     <EmorphedBox>
-      <Typography variant="h6" gutterBottom>
+      <Typography
+        variant="h6"
+        gutterBottom
+        sx={{
+          textAlign: isMobile ? "center" : "left",
+        }}
+      >
         Skills
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
-          {isSmallScreen ? (
+          {isMobile ? (
             <TabSkillsView
               selectedTab={selectedTab}
               handleChange={handleChange}
