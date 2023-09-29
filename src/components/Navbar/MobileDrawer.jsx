@@ -29,6 +29,14 @@ const drawerVariants = {
 };
 
 const MobileDrawer = ({ open, handleClose, navItems }) => {
+  const handleNavigation = (path) => {
+    const element = document.getElementById(path.substring(1));
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    handleClose();
+  };
+
   return (
     <AnimatePresence>
       {open && (
@@ -64,10 +72,9 @@ const MobileDrawer = ({ open, handleClose, navItems }) => {
               <List>
                 {navItems.map((item, index) => (
                   <Grid item xs={12} key={index}>
-                    <ListItem button onClick={handleClose}>
+                    <ListItem onClick={() => handleNavigation(item.path)}>
                       <Button
                         color="inherit"
-                        href={item.path}
                         fullWidth
                         sx={{
                           color: "#FFF",
