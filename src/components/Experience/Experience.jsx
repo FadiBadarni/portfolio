@@ -23,9 +23,12 @@ const Experience = ({ selectedSkill }) => {
 
   const MAX_SUBSKILLS = 6;
   const MAX_SUBSKILLS_MOBILE = 2;
-  const shouldShowMoreInfoButton = isSmallScreen
-    ? skillExperience["Sub-skills"].length > MAX_SUBSKILLS_MOBILE
-    : skillExperience["Sub-skills"].length > MAX_SUBSKILLS;
+
+  const shouldShowMoreInfoButton = skillExperience["Sub-skills"]
+    ? isSmallScreen
+      ? skillExperience["Sub-skills"].length > MAX_SUBSKILLS_MOBILE
+      : skillExperience["Sub-skills"].length > MAX_SUBSKILLS
+    : false;
 
   const handleOpen = () => setOpen(true); // Function to open the modal
 
@@ -117,34 +120,29 @@ const Experience = ({ selectedSkill }) => {
                   justifyContent="center"
                   flexWrap="wrap"
                   sx={{
-                    height:
-                      skillExperience["Sub-skills"].length > MAX_SUBSKILLS
-                        ? "80px"
-                        : "auto",
-                    overflow:
-                      skillExperience["Sub-skills"].length > MAX_SUBSKILLS
-                        ? "hidden"
-                        : "visible",
+                    height: shouldShowMoreInfoButton ? "80px" : "auto",
+                    overflow: shouldShowMoreInfoButton ? "hidden" : "visible",
                   }}
                 >
-                  {skillExperience["Sub-skills"]
-                    .slice(
-                      0,
-                      isSmallScreen ? MAX_SUBSKILLS_MOBILE : MAX_SUBSKILLS
-                    )
-                    .map((skill, index) => (
-                      <StyledChip
-                        label={skill}
-                        key={index}
-                        style={{
-                          width: isSmallScreen
-                            ? "100%"
-                            : isMediumScreen
-                            ? "50%"
-                            : "auto",
-                        }}
-                      />
-                    ))}
+                  {skillExperience["Sub-skills"] &&
+                    skillExperience["Sub-skills"]
+                      .slice(
+                        0,
+                        isSmallScreen ? MAX_SUBSKILLS_MOBILE : MAX_SUBSKILLS
+                      )
+                      .map((skill, index) => (
+                        <StyledChip
+                          label={skill}
+                          key={index}
+                          style={{
+                            width: isSmallScreen
+                              ? "100%"
+                              : isMediumScreen
+                              ? "50%"
+                              : "auto",
+                          }}
+                        />
+                      ))}
                 </Stack>
                 {shouldShowMoreInfoButton && (
                   <Grid

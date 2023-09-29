@@ -71,7 +71,7 @@ const Projects = () => {
               zIndex: 2,
               height: isMobile ? "300px" : "400px",
               overflowY: "scroll",
-              overflowX: "visible",
+              overflowX: "hidden",
               "&::-webkit-scrollbar": { width: "0px", height: "0px" },
               position: "relative",
             }}
