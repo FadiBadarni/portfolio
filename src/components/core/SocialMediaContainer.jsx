@@ -66,6 +66,7 @@ export const SocialMediaContainer = () => {
           },
         }}
         onMouseEnter={() => handleMouseEnter(githubControls, "GitHub")}
+        onClick={() => window.open("https://github.com/FadiBadarni", "_blank")}
       >
         <GitHub
           sx={{
@@ -98,6 +99,9 @@ export const SocialMediaContainer = () => {
           },
         }}
         onMouseEnter={() => handleMouseEnter(linkedInControls, "LinkedIn")}
+        onClick={() =>
+          window.open("https://www.linkedin.com/in/fadibadarni", "_blank")
+        }
       >
         <LinkedIn
           sx={{
