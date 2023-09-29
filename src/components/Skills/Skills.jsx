@@ -13,7 +13,7 @@ const skillsData = [
       { name: "MySQL", icon: "mysql/mysql-original.svg" },
       { name: "Spring", icon: "spring/spring-original.svg" },
       { name: "Python", icon: "python/python-original.svg" },
-      { name: "Git", icon: "git/git-original.svg" },
+      { name: "Github", icon: "github/github-original.svg" },
       { name: "MUI", icon: "materialui/materialui-original.svg" },
       { name: "PostgreSQL", icon: "postgresql/postgresql-original.svg" },
       { name: "HTML", icon: "html5/html5-original.svg" },

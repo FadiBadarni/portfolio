@@ -20,7 +20,12 @@ const Experience = ({ selectedSkill }) => {
   const isMediumScreen = useMediaQuery(theme.breakpoints.down("md"));
   const [open, setOpen] = useState(false); // State to control the modal
   const skillExperience = experienceData[selectedSkill] || {};
+
   const MAX_SUBSKILLS = 6;
+  const MAX_SUBSKILLS_MOBILE = 2;
+  const shouldShowMoreInfoButton = isSmallScreen
+    ? skillExperience["Sub-skills"].length > MAX_SUBSKILLS_MOBILE
+    : skillExperience["Sub-skills"].length > MAX_SUBSKILLS;
 
   const handleOpen = () => setOpen(true); // Function to open the modal
 
@@ -70,6 +75,8 @@ const Experience = ({ selectedSkill }) => {
                 p: 2,
                 borderRadius: "8px",
                 boxShadow: "0px 2px 4px rgba(255, 255, 255, 0.1)",
+                height: "220px",
+                overflow: "auto",
               }}
             >
               {Object.keys(skillExperience).includes("Overview") && (
@@ -120,21 +127,26 @@ const Experience = ({ selectedSkill }) => {
                         : "visible",
                   }}
                 >
-                  {skillExperience["Sub-skills"].map((skill, index) => (
-                    <StyledChip
-                      label={skill}
-                      key={index}
-                      style={{
-                        width: isSmallScreen
-                          ? "100%"
-                          : isMediumScreen
-                          ? "50%"
-                          : "auto",
-                      }}
-                    />
-                  ))}
+                  {skillExperience["Sub-skills"]
+                    .slice(
+                      0,
+                      isSmallScreen ? MAX_SUBSKILLS_MOBILE : MAX_SUBSKILLS
+                    )
+                    .map((skill, index) => (
+                      <StyledChip
+                        label={skill}
+                        key={index}
+                        style={{
+                          width: isSmallScreen
+                            ? "100%"
+                            : isMediumScreen
+                            ? "50%"
+                            : "auto",
+                        }}
+                      />
+                    ))}
                 </Stack>
-                {skillExperience["Sub-skills"].length > MAX_SUBSKILLS && (
+                {shouldShowMoreInfoButton && (
                   <Grid
                     item
                     xs={12}
@@ -145,7 +157,9 @@ const Experience = ({ selectedSkill }) => {
                       mt: 2,
                     }}
                   >
-                    <MaskedButton onClick={handleOpen}>Show More</MaskedButton>
+                    <MaskedButton onClick={handleOpen}>
+                      More Information
+                    </MaskedButton>
                   </Grid>
                 )}
               </motion.div>
