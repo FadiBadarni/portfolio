@@ -5,14 +5,15 @@ export const EmorphedBoxModal = styled(Box)`
   padding: 32px;
   border-radius: 24px;
   background: linear-gradient(rgba(37, 34, 39, 0.98) 0%, rgb(60, 52, 66) 100%);
-  overflow-y: auto;
+  overflow-y: hidden;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
-  maxheight: 80%;
+  max-height: 80%;
+
   &::before {
     content: "";
     position: absolute;
