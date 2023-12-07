@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Typography,
   Box,
@@ -7,15 +7,22 @@ import {
   StepLabel,
   StepContent,
   Grid,
-} from "@mui/material";
-import { EmorphedBox } from "components/core/EmorphedBox";
-import Colors from "utilities/Colors";
-import { educationData } from "./educationData";
-import { workData } from "./workData";
+} from '@mui/material';
+import { EmorphedBox } from 'components/core/EmorphedBox';
+import Colors from 'utilities/Colors';
+import { educationData } from './educationData';
+import { workData } from './workData';
 
 const CustomStepLabel = ({ label, date }) => (
   <Box>
-    <Typography variant="subtitle1">{label}</Typography>
+    <Typography
+      variant="subtitle1"
+      sx={{
+        color: `${Colors.cultered}`,
+      }}
+    >
+      {label}
+    </Typography>
     <Typography
       variant="caption"
       sx={{
@@ -36,14 +43,14 @@ const StepComponent = ({ steps }) => {
             key={step.label}
             completed={step.completed}
             sx={{
-              "& .MuiStepLabel-root .Mui-completed": {
-                color: "black",
+              '& .MuiStepLabel-root .Mui-completed': {
+                color: 'black',
               },
-              "& .MuiStepLabel-root .Mui-active": {
+              '& .MuiStepLabel-root .Mui-active': {
                 color: `${Colors.cultered}`,
               },
-              "& .MuiStepLabel-root .Mui-active .MuiStepIcon-text": {
-                fill: "black",
+              '& .MuiStepLabel-root .Mui-active .MuiStepIcon-text': {
+                fill: 'black',
               },
             }}
           >
