@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Grid,
   useMediaQuery,
@@ -6,13 +6,13 @@ import {
   Box,
   lighten,
   useTheme,
-} from "@mui/material";
-import { motion } from "framer-motion";
-import { MaskedTypography } from "components/core/MaskedTypography";
-import { ImageBox } from "components/core/ImageBox";
-import { SocialMediaContainer } from "components/core/SocialMediaContainer";
-import Colors from "utilities/Colors";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+} from '@mui/material';
+import { motion } from 'framer-motion';
+import { MaskedTypography } from 'components/core/MaskedTypography';
+import { ImageBox } from 'components/core/ImageBox';
+import { SocialMediaContainer } from 'components/core/SocialMediaContainer';
+import Colors from 'utilities/Colors';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 const textMotionVariant = {
   hidden: { opacity: 0 },
@@ -27,15 +27,15 @@ const buttonVariants = {
 
 const Hero = () => {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <Grid
       container
       spacing={2}
       sx={{
-        minHeight: isMobile ? "80vh" : "100vh",
-        alignItems: "center",
+        minHeight: isMobile ? '80vh' : '100vh',
+        alignItems: 'center',
       }}
     >
       <Grid item xs={12} md={6}>
@@ -56,18 +56,18 @@ const Hero = () => {
               <MaskedTypography
                 variant="h5"
                 sx={{
-                  textAlign: isMobile ? "center" : "left",
+                  textAlign: isMobile ? 'center' : 'left',
                 }}
               >
                 Hello, I'm
               </MaskedTypography>
               <MaskedTypography
                 sx={{
-                  fontSize: isMobile ? "8rem" : "10rem",
-                  mt: "-2rem",
-                  mb: "-2rem",
-                  fontWeight: "600",
-                  textAlign: isMobile ? "center" : "left",
+                  fontSize: isMobile ? '8rem' : '10rem',
+                  mt: '-2rem',
+                  mb: '-2rem',
+                  fontWeight: '600',
+                  textAlign: isMobile ? 'center' : 'left',
                 }}
               >
                 Fadi
@@ -75,7 +75,7 @@ const Hero = () => {
               <MaskedTypography
                 variant="h5"
                 sx={{
-                  textAlign: isMobile ? "center" : "left",
+                  textAlign: isMobile ? 'center' : 'left',
                 }}
               >
                 A Software Engineer
@@ -85,9 +85,9 @@ const Hero = () => {
           <Grid
             item
             sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'flex-end',
               mt: 3,
               mb: 3,
             }}
@@ -103,7 +103,7 @@ const Hero = () => {
                 endIcon={
                   <ArrowDropDownIcon
                     sx={{
-                      fontSize: "2.5rem",
+                      fontSize: '2.5rem',
                       color: Colors.cultered,
                     }}
                   />
@@ -111,17 +111,17 @@ const Hero = () => {
                 sx={{
                   backgroundColor: Colors.raisinBlack,
                   color: Colors.white,
-                  "&:hover": {
+                  '&:hover': {
                     backgroundColor: lighten(Colors.raisinBlack, 0.1),
                   },
-                  textTransform: "none",
-                  fontSize: "1rem",
-                  fontWeight: "bold",
+                  textTransform: 'none',
+                  fontSize: '1rem',
+                  fontWeight: 'bold',
                   borderRadius: 1.5,
                 }}
                 onClick={() => {
-                  const element = document.getElementById("projects");
-                  element.scrollIntoView({ behavior: "smooth" });
+                  const element = document.getElementById('projects');
+                  element.scrollIntoView({ behavior: 'smooth' });
                 }}
               >
                 <Box component="span" sx={{ pr: 2 }}>
@@ -133,9 +133,9 @@ const Hero = () => {
           <Grid
             item
             sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
               mt: 1,
               mb: 3,
               mx: 3,
@@ -157,7 +157,7 @@ const Hero = () => {
               <img
                 src={`${process.env.PUBLIC_URL}/assets/me.webp`}
                 alt="Fadi"
-                style={{ width: "100%", height: "auto" }}
+                style={{ width: '100%', height: 'auto' }}
               />
             </ImageBox>
           </motion.div>
