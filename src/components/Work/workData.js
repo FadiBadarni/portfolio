@@ -9,7 +9,7 @@ export const workData = [
     label: 'Volunteer Frontend Developer at Noviopus',
     description:
       'Followed project documentation and Figma design specs to develop the website UI.',
-    completed: false,
-    date: 'Oct 30th 2023 - Current',
+    completed: true,
+    date: 'Oct 30th 2023 - Dec 30th 2023',
   },
 ];
